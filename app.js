@@ -58,6 +58,12 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/projects', (req,res) => {
+    res.render('projects.hbs', {
+        title: 'Project page title'
+    });
+});
+
 app.get('/bad', (req, res) => {
     res.send({
         error: 'Page failed to load because you are an idiot, idiot'
