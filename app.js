@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 let app = express();
 
 // set config
@@ -42,7 +44,7 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/tits', (req, res) => {
+app.get('/bah', (req, res) => {
     let obj = { test: 'yeah', testing: 'whatever'};
     res.send(obj);
 });
@@ -60,6 +62,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('App listening on port 3000');
+app.listen(port, () => {
+    console.log(`App listening on port ${port}`);
 });
